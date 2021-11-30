@@ -16,7 +16,6 @@
 		C01CDD2D274E99B300972BCC /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD2C274E99B300972BCC /* RegisterResponse.swift */; };
 		C01CDD2F274E99BC00972BCC /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD2E274E99BC00972BCC /* LoginResponse.swift */; };
 		C01CDD31274EAC1600972BCC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */; };
-		C01CDD33274EB0D000972BCC /* ResetPasswordBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD32274EB0D000972BCC /* ResetPasswordBody.swift */; };
 		C040FDF8274E3AA7009668AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040FDF7274E3AA7009668AE /* LoginViewModel.swift */; };
 		C0AF76712754469900EEE153 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF76702754469900EEE153 /* UserService.swift */; };
 		C0AF767327544D0000EEE153 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF767227544D0000EEE153 /* ProfileViewModel.swift */; };
@@ -26,7 +25,6 @@
 		C0B38E1A27559ED800712151 /* PartyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1927559ED800712151 /* PartyService.swift */; };
 		C0B38E1C27559F0600712151 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1B27559F0600712151 /* Party.swift */; };
 		C0B38E1E27559F1100712151 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1D27559F1100712151 /* Member.swift */; };
-		C0B38E202755A57600712151 /* CreatePartyRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1F2755A57600712151 /* CreatePartyRequestBody.swift */; };
 		C0B38E222755A59400712151 /* JoinPartyRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */; };
 		C0B38E242755AE5200712151 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E232755AE5200712151 /* MailView.swift */; };
 		C0B38E262755AE7000712151 /* ComposeMailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E252755AE7000712151 /* ComposeMailData.swift */; };
@@ -53,7 +51,6 @@
 		C01CDD2C274E99B300972BCC /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		C01CDD2E274E99BC00972BCC /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		C01CDD32274EB0D000972BCC /* ResetPasswordBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordBody.swift; sourceTree = "<group>"; };
 		C040FDF7274E3AA7009668AE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C0AF76702754469900EEE153 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C0AF767227544D0000EEE153 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		C0B38E1927559ED800712151 /* PartyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyService.swift; sourceTree = "<group>"; };
 		C0B38E1B27559F0600712151 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		C0B38E1D27559F1100712151 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		C0B38E1F2755A57600712151 /* CreatePartyRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyRequestBody.swift; sourceTree = "<group>"; };
 		C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPartyRequestBody.swift; sourceTree = "<group>"; };
 		C0B38E232755AE5200712151 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		C0B38E252755AE7000712151 /* ComposeMailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMailData.swift; sourceTree = "<group>"; };
@@ -131,8 +127,6 @@
 			children = (
 				C01CDD28274E999F00972BCC /* LoginRequestBody.swift */,
 				C01CDD2A274E99A900972BCC /* RegisterRequestBody.swift */,
-				C01CDD32274EB0D000972BCC /* ResetPasswordBody.swift */,
-				C0B38E1F2755A57600712151 /* CreatePartyRequestBody.swift */,
 				C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */,
 			);
 			path = RequestBody;
@@ -274,7 +268,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C0F6E2A2274DAF9A007EF618 /* Build configuration list for PBXProject "party-joiner-mobile" */;
+			buildConfigurationList = C0F6E2A2274DAF9A007EF618 /* Build configuration list for PBXProject "Party Joiner" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -323,12 +317,10 @@
 				C0B38E14275596EB00712151 /* PartyHistoryView.swift in Sources */,
 				C0AF767327544D0000EEE153 /* ProfileViewModel.swift in Sources */,
 				C0F6E2D7274DBA9C007EF618 /* AuthService.swift in Sources */,
-				C0B38E202755A57600712151 /* CreatePartyRequestBody.swift in Sources */,
 				C0F6E2AD274DAF9A007EF618 /* PartyJoinerView.swift in Sources */,
 				C0B38E1C27559F0600712151 /* Party.swift in Sources */,
 				C0B38E162755970D00712151 /* NotificationSettingsView.swift in Sources */,
 				C01CDD1D274E95EF00972BCC /* ForgotPasswordView.swift in Sources */,
-				C01CDD33274EB0D000972BCC /* ResetPasswordBody.swift in Sources */,
 				C0B3C2A827525BF3005100ED /* SettingsTabView.swift in Sources */,
 				C0B38E262755AE7000712151 /* ComposeMailData.swift in Sources */,
 				C01CDD31274EAC1600972BCC /* RegisterViewModel.swift in Sources */,
@@ -404,6 +396,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Party Joiner";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -458,6 +451,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Party Joiner";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -526,7 +520,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0F6E2A2274DAF9A007EF618 /* Build configuration list for PBXProject "party-joiner-mobile" */ = {
+		C0F6E2A2274DAF9A007EF618 /* Build configuration list for PBXProject "Party Joiner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0F6E2C9274DAF9B007EF618 /* Debug */,

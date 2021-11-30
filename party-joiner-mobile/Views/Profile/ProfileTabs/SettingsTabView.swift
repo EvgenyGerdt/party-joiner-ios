@@ -77,7 +77,7 @@ struct SettingsTabView: View {
                         HStack {
                             Image(systemName: "exclamationmark.square.fill")
                                 .font(.system(size: 26))
-                                .foregroundColor(.yellow)
+                                .foregroundColor(.orange)
                             Text("Нашли ошибку?")
                         }
                     })
