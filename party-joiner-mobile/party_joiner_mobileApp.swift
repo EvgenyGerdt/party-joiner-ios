@@ -11,7 +11,7 @@ import SwiftUI
 struct party_joiner_mobileApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PartyJoinerView(loginViewModel: LoginViewModel(), profileViewModel: ProfileViewModel())
         }
     }
 }
