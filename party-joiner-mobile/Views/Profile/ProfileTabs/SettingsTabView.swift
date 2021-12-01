@@ -12,6 +12,8 @@ struct SettingsTabView: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     @EnvironmentObject var profileModel: ProfileViewModel
     
+    
+    @State private var confirmationShown = false
     @State private var showMailView = false
     
     @State private var mailData = ComposeMailData(subject: "[BugReport] Find error \(Date.now)",
@@ -46,7 +48,8 @@ struct SettingsTabView: View {
                 
                 Section(content: {
                     NavigationLink(destination: PartyHistoryView()) {
-                        Image(systemName: "bookmark.square.fill")
+                        Image(systemName: "star.square.fill")
+                            .renderingMode(.original)
                             .font(.system(size: 26))
                             .foregroundColor(.blue)
                         Text("История вечеринок")
@@ -54,6 +57,7 @@ struct SettingsTabView: View {
                     
                     NavigationLink(destination: NotificationSettingsView()) {
                         Image(systemName: "bell.square.fill")
+                            .renderingMode(.original)
                             .font(.system(size: 26))
                             .foregroundColor(.red)
                         Text("Уведомления")
@@ -61,6 +65,7 @@ struct SettingsTabView: View {
                     
                     NavigationLink(destination: LanguageSettingsView()) {
                         Image(systemName: "flag.square.fill")
+                            .renderingMode(.original)
                             .font(.system(size: 26))
                             .foregroundColor(.yellow)
                         Text("Язык")
@@ -76,6 +81,7 @@ struct SettingsTabView: View {
                     Button(action: {showMailView.toggle()}, label: {
                         HStack {
                             Image(systemName: "exclamationmark.square.fill")
+                                .renderingMode(.original)
                                 .font(.system(size: 26))
                                 .foregroundColor(.orange)
                             Text("Нашли ошибку?")
@@ -90,12 +96,18 @@ struct SettingsTabView: View {
                 })
                 
                 Section(content: {
-                    Button(action: {loginViewModel.logout()}) {
+                    Button(action: {confirmationShown.toggle()}) {
                         HStack {
                             Spacer()
                             Text("Выйти")
                                 .foregroundColor(.red)
                             Spacer()
+                        }
+                    }.confirmationDialog("Вы уверены, что хотите выйти?", isPresented: $confirmationShown) {
+                        Button("Да, я хочу выйти") {
+                            withAnimation {
+                                loginViewModel.logout()
+                            }
                         }
                     }
                 })

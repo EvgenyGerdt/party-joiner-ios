@@ -16,15 +16,19 @@
 		C01CDD2D274E99B300972BCC /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD2C274E99B300972BCC /* RegisterResponse.swift */; };
 		C01CDD2F274E99BC00972BCC /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD2E274E99BC00972BCC /* LoginResponse.swift */; };
 		C01CDD31274EAC1600972BCC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */; };
+		C034F2072756F7E200B3883E /* PartyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034F2062756F7E200B3883E /* PartyListViewModel.swift */; };
+		C034F20B2756F82800B3883E /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034F20A2756F82800B3883E /* Party.swift */; };
+		C034F20D2757025400B3883E /* PartyListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034F20C2757025400B3883E /* PartyListResponse.swift */; };
 		C040FDF8274E3AA7009668AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040FDF7274E3AA7009668AE /* LoginViewModel.swift */; };
+		C08780512755CF77004A6F84 /* CreatePartyRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08780502755CF77004A6F84 /* CreatePartyRequestBody.swift */; };
+		C08780552755D3CD004A6F84 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08780542755D3CD004A6F84 /* MessageResponse.swift */; };
+		C08780572755D42B004A6F84 /* CreatePartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */; };
 		C0AF76712754469900EEE153 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF76702754469900EEE153 /* UserService.swift */; };
 		C0AF767327544D0000EEE153 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF767227544D0000EEE153 /* ProfileViewModel.swift */; };
 		C0B38E14275596EB00712151 /* PartyHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E13275596EB00712151 /* PartyHistoryView.swift */; };
 		C0B38E162755970D00712151 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E152755970D00712151 /* NotificationSettingsView.swift */; };
 		C0B38E182755972B00712151 /* LanguageSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E172755972B00712151 /* LanguageSettingsView.swift */; };
 		C0B38E1A27559ED800712151 /* PartyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1927559ED800712151 /* PartyService.swift */; };
-		C0B38E1C27559F0600712151 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1B27559F0600712151 /* Party.swift */; };
-		C0B38E1E27559F1100712151 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E1D27559F1100712151 /* Member.swift */; };
 		C0B38E222755A59400712151 /* JoinPartyRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */; };
 		C0B38E242755AE5200712151 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E232755AE5200712151 /* MailView.swift */; };
 		C0B38E262755AE7000712151 /* ComposeMailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E252755AE7000712151 /* ComposeMailData.swift */; };
@@ -39,6 +43,11 @@
 		C0F6E2B2274DAF9B007EF618 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F6E2B1274DAF9B007EF618 /* Preview Assets.xcassets */; };
 		C0F6E2D7274DBA9C007EF618 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6E2D6274DBA9C007EF618 /* AuthService.swift */; };
 		C0F7C2C6274EF2C90064EF9A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7C2C5274EF2C90064EF9A /* ProfileView.swift */; };
+		C0FFDFEA27572FB600A9A2B9 /* PartyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFDFE927572FB600A9A2B9 /* PartyView.swift */; };
+		C0FFDFED2757389B00A9A2B9 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFDFEC2757389B00A9A2B9 /* ShareSheetView.swift */; };
+		C0FFDFEF275739CE00A9A2B9 /* PartyMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFDFEE275739CE00A9A2B9 /* PartyMembersView.swift */; };
+		C0FFDFF127573B1200A9A2B9 /* MemberCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFDFF027573B1200A9A2B9 /* MemberCartView.swift */; };
+		C0FFDFF327573CC300A9A2B9 /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFDFF227573CC300A9A2B9 /* PartyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,15 +60,19 @@
 		C01CDD2C274E99B300972BCC /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		C01CDD2E274E99BC00972BCC /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		C034F2062756F7E200B3883E /* PartyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListViewModel.swift; sourceTree = "<group>"; };
+		C034F20A2756F82800B3883E /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		C034F20C2757025400B3883E /* PartyListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListResponse.swift; sourceTree = "<group>"; };
 		C040FDF7274E3AA7009668AE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C08780502755CF77004A6F84 /* CreatePartyRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyRequestBody.swift; sourceTree = "<group>"; };
+		C08780542755D3CD004A6F84 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyViewModel.swift; sourceTree = "<group>"; };
 		C0AF76702754469900EEE153 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C0AF767227544D0000EEE153 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0B38E13275596EB00712151 /* PartyHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHistoryView.swift; sourceTree = "<group>"; };
 		C0B38E152755970D00712151 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		C0B38E172755972B00712151 /* LanguageSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingsView.swift; sourceTree = "<group>"; };
 		C0B38E1927559ED800712151 /* PartyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyService.swift; sourceTree = "<group>"; };
-		C0B38E1B27559F0600712151 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
-		C0B38E1D27559F1100712151 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPartyRequestBody.swift; sourceTree = "<group>"; };
 		C0B38E232755AE5200712151 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		C0B38E252755AE7000712151 /* ComposeMailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMailData.swift; sourceTree = "<group>"; };
@@ -74,6 +87,11 @@
 		C0F6E2B1274DAF9B007EF618 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0F6E2D6274DBA9C007EF618 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C0F7C2C5274EF2C90064EF9A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C0FFDFE927572FB600A9A2B9 /* PartyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyView.swift; sourceTree = "<group>"; };
+		C0FFDFEC2757389B00A9A2B9 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
+		C0FFDFEE275739CE00A9A2B9 /* PartyMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMembersView.swift; sourceTree = "<group>"; };
+		C0FFDFF027573B1200A9A2B9 /* MemberCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCartView.swift; sourceTree = "<group>"; };
+		C0FFDFF227573CC300A9A2B9 /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +109,11 @@
 		C01CDD1B274E95D900972BCC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C0FFDFEB2757388D00A9A2B9 /* Sheets */,
 				C0F7C2C4274EF2B90064EF9A /* Profile */,
 				C01CDD1C274E95EF00972BCC /* ForgotPasswordView.swift */,
 				C01CDD1E274E96E400972BCC /* SignUpView.swift */,
 				C006EE7C274EFA3E00F14A18 /* AuthView.swift */,
-				C0B38E232755AE5200712151 /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,11 +121,10 @@
 		C01CDD20274E979700972BCC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C01CDD26274E997E00972BCC /* RequestBody */,
+				C034F2052756F6B200B3883E /* PartyModels */,
+				C034F2042756F6AB00B3883E /* UserModels */,
+				C01CDD26274E997E00972BCC /* Requests */,
 				C01CDD25274E997500972BCC /* Responses */,
-				C01CDD23274E97B800972BCC /* User.swift */,
-				C0B38E1B27559F0600712151 /* Party.swift */,
-				C0B38E1D27559F1100712151 /* Member.swift */,
 				C0B38E252755AE7000712151 /* ComposeMailData.swift */,
 			);
 			path = Models;
@@ -118,18 +135,37 @@
 			children = (
 				C01CDD2C274E99B300972BCC /* RegisterResponse.swift */,
 				C01CDD2E274E99BC00972BCC /* LoginResponse.swift */,
+				C08780542755D3CD004A6F84 /* MessageResponse.swift */,
+				C034F20C2757025400B3883E /* PartyListResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		C01CDD26274E997E00972BCC /* RequestBody */ = {
+		C01CDD26274E997E00972BCC /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				C01CDD28274E999F00972BCC /* LoginRequestBody.swift */,
 				C01CDD2A274E99A900972BCC /* RegisterRequestBody.swift */,
 				C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */,
+				C08780502755CF77004A6F84 /* CreatePartyRequestBody.swift */,
 			);
-			path = RequestBody;
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C034F2042756F6AB00B3883E /* UserModels */ = {
+			isa = PBXGroup;
+			children = (
+				C01CDD23274E97B800972BCC /* User.swift */,
+			);
+			path = UserModels;
+			sourceTree = "<group>";
+		};
+		C034F2052756F6B200B3883E /* PartyModels */ = {
+			isa = PBXGroup;
+			children = (
+				C034F20A2756F82800B3883E /* Party.swift */,
+			);
+			path = PartyModels;
 			sourceTree = "<group>";
 		};
 		C040FDF6274E3A8E009668AE /* ViewModels */ = {
@@ -138,6 +174,9 @@
 				C040FDF7274E3AA7009668AE /* LoginViewModel.swift */,
 				C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */,
 				C0AF767227544D0000EEE153 /* ProfileViewModel.swift */,
+				C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */,
+				C034F2062756F7E200B3883E /* PartyListViewModel.swift */,
+				C0FFDFF227573CC300A9A2B9 /* PartyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -155,6 +194,7 @@
 		C0B3C29D27525B84005100ED /* ProfileTabs */ = {
 			isa = PBXGroup;
 			children = (
+				C0FFDFE827572FA600A9A2B9 /* PartyViews */,
 				C0B38E122755968900712151 /* SettingsViews */,
 				C0B3C2A227525BB9005100ED /* CreatePartyTabView.swift */,
 				C0B3C2A427525BD8005100ED /* PartyListTabView.swift */,
@@ -230,6 +270,25 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		C0FFDFE827572FA600A9A2B9 /* PartyViews */ = {
+			isa = PBXGroup;
+			children = (
+				C0FFDFE927572FB600A9A2B9 /* PartyView.swift */,
+				C0FFDFEE275739CE00A9A2B9 /* PartyMembersView.swift */,
+				C0FFDFF027573B1200A9A2B9 /* MemberCartView.swift */,
+			);
+			path = PartyViews;
+			sourceTree = "<group>";
+		};
+		C0FFDFEB2757388D00A9A2B9 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				C0B38E232755AE5200712151 /* MailView.swift */,
+				C0FFDFEC2757389B00A9A2B9 /* ShareSheetView.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,7 +333,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = C0F6E29E274DAF9A007EF618;
 			packageReferences = (
@@ -310,31 +369,40 @@
 				C040FDF8274E3AA7009668AE /* LoginViewModel.swift in Sources */,
 				C01CDD29274E999F00972BCC /* LoginRequestBody.swift in Sources */,
 				C0B3C2A327525BB9005100ED /* CreatePartyTabView.swift in Sources */,
+				C08780552755D3CD004A6F84 /* MessageResponse.swift in Sources */,
+				C08780572755D42B004A6F84 /* CreatePartyViewModel.swift in Sources */,
 				C0B38E222755A59400712151 /* JoinPartyRequestBody.swift in Sources */,
-				C0B38E1E27559F1100712151 /* Member.swift in Sources */,
+				C034F2072756F7E200B3883E /* PartyListViewModel.swift in Sources */,
+				C08780512755CF77004A6F84 /* CreatePartyRequestBody.swift in Sources */,
 				C01CDD2B274E99A900972BCC /* RegisterRequestBody.swift in Sources */,
 				C01CDD2D274E99B300972BCC /* RegisterResponse.swift in Sources */,
 				C0B38E14275596EB00712151 /* PartyHistoryView.swift in Sources */,
 				C0AF767327544D0000EEE153 /* ProfileViewModel.swift in Sources */,
+				C0FFDFF127573B1200A9A2B9 /* MemberCartView.swift in Sources */,
 				C0F6E2D7274DBA9C007EF618 /* AuthService.swift in Sources */,
 				C0F6E2AD274DAF9A007EF618 /* PartyJoinerView.swift in Sources */,
-				C0B38E1C27559F0600712151 /* Party.swift in Sources */,
 				C0B38E162755970D00712151 /* NotificationSettingsView.swift in Sources */,
 				C01CDD1D274E95EF00972BCC /* ForgotPasswordView.swift in Sources */,
 				C0B3C2A827525BF3005100ED /* SettingsTabView.swift in Sources */,
+				C0FFDFF327573CC300A9A2B9 /* PartyViewModel.swift in Sources */,
 				C0B38E262755AE7000712151 /* ComposeMailData.swift in Sources */,
 				C01CDD31274EAC1600972BCC /* RegisterViewModel.swift in Sources */,
 				C0B38E242755AE5200712151 /* MailView.swift in Sources */,
 				C01CDD1F274E96E400972BCC /* SignUpView.swift in Sources */,
 				C006EE7D274EFA3E00F14A18 /* AuthView.swift in Sources */,
+				C034F20B2756F82800B3883E /* Party.swift in Sources */,
 				C0B38E1A27559ED800712151 /* PartyService.swift in Sources */,
 				C0F6E2AB274DAF9A007EF618 /* party_joiner_mobileApp.swift in Sources */,
 				C0B3C2A527525BD8005100ED /* PartyListTabView.swift in Sources */,
+				C0FFDFEF275739CE00A9A2B9 /* PartyMembersView.swift in Sources */,
+				C0FFDFED2757389B00A9A2B9 /* ShareSheetView.swift in Sources */,
 				C0AF76712754469900EEE153 /* UserService.swift in Sources */,
 				C01CDD2F274E99BC00972BCC /* LoginResponse.swift in Sources */,
 				C0B38E182755972B00712151 /* LanguageSettingsView.swift in Sources */,
 				C0F7C2C6274EF2C90064EF9A /* ProfileView.swift in Sources */,
+				C034F20D2757025400B3883E /* PartyListResponse.swift in Sources */,
 				C01CDD24274E97B800972BCC /* User.swift in Sources */,
+				C0FFDFEA27572FB600A9A2B9 /* PartyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

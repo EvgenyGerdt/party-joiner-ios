@@ -70,7 +70,7 @@ struct FirstNameFieldContent: View {
     @Binding var firstName: String
     
     var body: some View {
-        TextField("Enter your first name...", text: $firstName)
+        TextField("Введите свое имя...", text: $firstName)
             .padding()
             .background(.thickMaterial)
             .cornerRadius(10.0)
@@ -81,7 +81,7 @@ struct LastNameFieldContent: View {
     @Binding var lastName: String
     
     var body: some View {
-        TextField("Enter your last name...", text: $lastName)
+        TextField("Введите свою фамилию...", text: $lastName)
             .padding()
             .background(.thickMaterial)
             .cornerRadius(10.0)
@@ -92,7 +92,7 @@ struct RegEmailFieldContent: View {
     @Binding var email: String
     
     var body: some View {
-        TextField("Enter your email...", text: $email)
+        TextField("Введите ваш почтовый адрес...", text: $email)
             .padding()
             .background(.thickMaterial)
             .cornerRadius(10.0)
@@ -103,7 +103,7 @@ struct RegPasswordFieldContent: View {
     @Binding var password: String
     
     var body: some View {
-        SecureField("Enter your password...", text: $password)
+        SecureField("Введите ваш пароль...", text: $password)
             .padding()
             .background(.thickMaterial)
             .cornerRadius(10.0)

@@ -28,26 +28,35 @@ struct AuthView: View {
                     ForgotPasswordContent(hasAuthError: $loginViewModel.hasAuthError)
                     NavigationLink(destination: ProfileView()) {
                         Button(action: {loginViewModel.login()}) {
-                            LoginButtonContent()
+                            LoginButtonContent(hasLoading: $loginViewModel.hasLoading)
                         }
                     }
                 }
                 Spacer()
                 SignUpContent()
             }.padding()
-        }.navigationTitle("Авторизация")
+        }
     }
 }
 
 struct LoginButtonContent: View {
+    
+    @Binding var hasLoading: Bool
+    
     var body: some View {
-        Text("ВОЙТИ")
-            .font(.headline)
-            .frame(width: 150, height: 50)
-            .foregroundColor(.white)
-            .background(.blue)
-            .cornerRadius(10.0)
-            .padding()
+        if !hasLoading {
+            Text("Войти ")
+                .font(.headline)
+                .frame(width: 150, height: 50)
+                .foregroundColor(.white)
+                .background(.blue)
+                .cornerRadius(10.0)
+                .padding()
+        } else {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .scaleEffect(1)
+        }
     }
 }
 
@@ -56,7 +65,7 @@ struct WelcomeContent: View {
         HStack {
             VStack(alignment: .center, spacing: 0) {
                 HStack {
-                    Text("Добро пожаловать!")
+                    Text(LocalizedStringKey("С возращением!"))
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     Spacer()
@@ -115,9 +124,9 @@ struct PasswordFieldContent: View {
 struct SignUpContent: View {
     var body: some View {
         HStack {
-            Text("Нет аккаунта?")
+            Text(LocalizedStringKey("Нет аккаунта?"))
             NavigationLink(destination: SignUpView(), label: {
-                Text("Влетай!")
+                Text(LocalizedStringKey("Создать!"))
             })
                 .foregroundColor(.blue)
         }

@@ -11,6 +11,8 @@ struct PartyJoinerView: View {
     
     @StateObject var loginViewModel: LoginViewModel
     @StateObject var profileViewModel: ProfileViewModel
+    @StateObject var createPartyViewModel: CreatePartyViewModel
+    @StateObject var partyListViewModel: PartyListViewModel
 
     var body: some View {
         Section {
@@ -21,6 +23,8 @@ struct PartyJoinerView: View {
                 ProfileView()
                     .environmentObject(profileViewModel)
                     .environmentObject(loginViewModel)
+                    .environmentObject(createPartyViewModel)
+                    .environmentObject(partyListViewModel)
                     .onAppear(perform: {profileViewModel.loadUser()})
             }
         }.onAppear {

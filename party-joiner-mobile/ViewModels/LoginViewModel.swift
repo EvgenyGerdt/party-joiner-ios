@@ -18,12 +18,14 @@ class LoginViewModel: ObservableObject {
     
     @Published var hasAuthError: Bool = false
     @Published var signedIn: Bool = false
+    @Published var hasLoading: Bool = false
     
     private var loginCandidate: LoginRequestBody {
         LoginRequestBody(email: email, password: password)
     }
         
     func login() {
+        self.hasLoading = true
         AuthService().login(user: loginCandidate) { result in
             switch result {
                 case .success(let response):
@@ -31,8 +33,10 @@ class LoginViewModel: ObservableObject {
                     UserDefaults.standard.set(response.user.id, forKey: "id")
                     UserDefaults.standard.synchronize()
                 
+                    self.hasLoading = false
                     self.signedIn = self.isSignedIn
                 case .failure(let error):
+                    self.hasLoading = false
                     print(error.localizedDescription)
             }
         }
