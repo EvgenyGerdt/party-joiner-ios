@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct JoinPartyRequestBody: Codable {
+    let code: String
+}

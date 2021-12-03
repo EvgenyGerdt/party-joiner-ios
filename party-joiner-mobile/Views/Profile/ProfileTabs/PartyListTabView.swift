@@ -11,20 +11,23 @@ struct PartyListTabView: View {
     
     @EnvironmentObject var partyListViewModel: PartyListViewModel
     
-    @State var searchFieldValue: String = ""
     @State var isShowSearchField: Bool = false
+    @State var isShowJoinPartySheet: Bool = false
+    
+    var dateFormatter = DateFormatter()
     
     var body: some View {
         NavigationView {
             Form {
                 if isShowSearchField {
                     Section(content: {
-                        TextField("Поиск по названию вечеринки", text: $searchFieldValue)
+                        TextField("Поиск по названию вечеринки", text: $partyListViewModel.searchInput)
                     })
                 }
                 
                 if !partyListViewModel.hasLoading {
-                    List(partyListViewModel.parties, id: \._id) { party in
+                    List(partyListViewModel.hasSearching ?
+                         partyListViewModel.filteredParties : partyListViewModel.parties, id: \._id) { party in
                         NavigationLink(destination: PartyView(party: party)) {
                             VStack {
                                 HStack {
@@ -39,7 +42,7 @@ struct PartyListTabView: View {
                                         .foregroundColor(.gray)
                                     Spacer()
                                 }
-                            }
+                            }.padding()
                         }
                     }
                 } else {
@@ -51,13 +54,27 @@ struct PartyListTabView: View {
             }.navigationTitle("Список")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(content: {
-                    Button(action: {
-                        withAnimation {
-                            isShowSearchField.toggle()
+                    ToolbarItem(placement: .primaryAction, content: {
+                        Button(action: {
+                            withAnimation {
+                                isShowSearchField.toggle()
+                            }
+                        }) {
+                            Image(systemName: "magnifyingglass")
                         }
-                    }) {
-                        Image(systemName: "magnifyingglass")
-                    }
+                    })
+                    
+                    ToolbarItem(placement: .navigation, content: {
+                        Button(action: {
+                            withAnimation {
+                                isShowJoinPartySheet.toggle()
+                            }
+                        }) {
+                            Image(systemName: "plus")
+                        }.sheet(isPresented: $isShowJoinPartySheet, content: {
+                            JoinPartySheet()
+                        })
+                    })
                 })
         }
     }

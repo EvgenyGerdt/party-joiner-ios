@@ -20,8 +20,10 @@ class ProfileViewModel: ObservableObject {
                 case .success(let user):
                     self.user = user
                     self.hasLoading = false
+                    self.hasError = false
                 case .failure(let error):
                     self.hasLoading = false
+                    self.hasError = true
                     print(error.localizedDescription)
             }
         }

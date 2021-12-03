@@ -11,7 +11,7 @@ import SwiftUI
 struct party_joiner_mobileApp: App {
     var body: some Scene {
         WindowGroup {
-            PartyJoinerView(loginViewModel: LoginViewModel(), profileViewModel: ProfileViewModel(), createPartyViewModel: CreatePartyViewModel(), partyListViewModel: PartyListViewModel())
+            PartyJoinerView(loginViewModel: LoginViewModel(), profileViewModel: ProfileViewModel(), createPartyViewModel: CreatePartyViewModel())
                 .environment(\.locale, .init(identifier: "en"))
         }
     }

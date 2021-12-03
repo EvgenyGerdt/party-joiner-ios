@@ -34,9 +34,11 @@ class LoginViewModel: ObservableObject {
                     UserDefaults.standard.synchronize()
                 
                     self.hasLoading = false
+                    self.hasAuthError = false
                     self.signedIn = self.isSignedIn
                 case .failure(let error):
                     self.hasLoading = false
+                    self.hasAuthError = true
                     print(error.localizedDescription)
             }
         }

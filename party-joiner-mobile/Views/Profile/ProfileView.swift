@@ -12,7 +12,7 @@ struct ProfileView: View {
     @EnvironmentObject var profileModel: ProfileViewModel
     @EnvironmentObject var loginViewModel: LoginViewModel
     @EnvironmentObject var createPartyViewModel: CreatePartyViewModel
-    @EnvironmentObject var partyListViewModel: PartyListViewModel
+    @StateObject var partyListViewModel: PartyListViewModel = PartyListViewModel()
 
     var body: some View {
         TabView {
@@ -28,7 +28,11 @@ struct ProfileView: View {
                 .tabItem {
                     Text("Мои вечеринки")
                     Image(systemName: "person.3")
-                }.onAppear(perform: {partyListViewModel.loadPartyList()})
+                }.onAppear(perform: {
+                    if loginViewModel.signedIn {
+                        partyListViewModel.loadPartyList()
+                    }
+                })
             
             SettingsTabView()
                 .environmentObject(loginViewModel)

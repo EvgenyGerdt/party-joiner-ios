@@ -10,8 +10,19 @@ import Foundation
 class PartyListViewModel: ObservableObject {
     
     @Published var parties: [Party] = [Party.placeholder]
+    
+    @Published var searchInput: String = ""
+    
     @Published var hasLoading: Bool = false
     @Published var hasError: Bool = false
+    
+    var hasSearching: Bool {
+        return searchInput.count > 0
+    }
+    
+    var filteredParties: [Party] {
+        return parties.filter { $0.name.contains(searchInput) }
+    }
     
     func loadPartyList() {
         self.hasLoading = true

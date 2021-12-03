@@ -55,4 +55,50 @@ class PartyService: ObservableObject {
             }
         }
     }
+    
+//    func loadCurrentParty(id: String, completion: @escaping (Result<Party, PartyError>) -> Void) {
+//        AF.request(API.BaseURL)
+//    }
+    
+    func joinToParty(joinPartyBody: JoinPartyRequestBody, completion: @escaping (Result<String, PartyError>) -> Void) {
+        AF.request(API.BaseURL + "/party/user/\(id ?? "")",
+                   method: .post,
+                   parameters: joinPartyBody,
+                   encoder: JSONParameterEncoder.default,
+                   headers: ["Authorization": self.token!]).response { response in
+            guard let data = response.data else {
+                completion(.failure(.custom(errorMessage: "[JoinToParty] no data")))
+                return
+            }
+            
+            do {
+                let partyJoinResponse = try JSONDecoder().decode(MessageResponse.self, from: data)
+                completion(.success(partyJoinResponse.message))
+            } catch {
+                print(error)
+                completion(.failure(.custom(errorMessage: "Decoding error at [JoinToPartyRequest]: \(error)")))
+            }
+        }
+    }
+    
+    func addItemToCart(addItemToCartBody: AddToCartRequestBody, completion: @escaping (Result<String, PartyError>) -> Void) {
+        AF.request(API.BaseURL + "/party/\(id ?? "")/add",
+                   method: .post,
+                   parameters: addItemToCartBody,
+                   encoder: JSONParameterEncoder.default,
+                   headers: ["Authorization": self.token!]).response { response in
+            guard let data = response.data else {
+                completion(.failure(.custom(errorMessage: "[AddItemToCart] no data")))
+                return
+            }
+            
+            do {
+                let addItemToCartResponse = try JSONDecoder().decode(MessageResponse.self, from: data)
+                completion(.success(addItemToCartResponse.message))
+            } catch {
+                print(error)
+                completion(.failure(.custom(errorMessage: "Decoding error at [AddItemToCart]: \(error)")))
+            }
+        }
+    }
 }

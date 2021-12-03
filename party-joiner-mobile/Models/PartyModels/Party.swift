@@ -31,7 +31,15 @@ struct Party: Decodable {
     
     struct Info: Decodable {
         var location: String
-        var willHappenAt: String
+        var willHappenAt: String {
+            didSet {
+                let dateFormatter = DateFormatter()
+                
+                dateFormatter.dateFormat = "dd/MM/yy";
+                let bufferDate: Date = dateFormatter.date(from: willHappenAt)!
+                willHappenAt = dateFormatter.string(from: bufferDate)
+            }
+        }
         var description: String
     }
     

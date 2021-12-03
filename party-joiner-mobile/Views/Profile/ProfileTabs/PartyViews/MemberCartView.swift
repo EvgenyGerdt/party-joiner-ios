@@ -12,18 +12,16 @@ struct MemberCartView: View {
     @State var cart: [Party.Member.CartItem]
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(content: {
-                    Text("Cart")
-                })
-            }.navigationTitle("Мои товары")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar(content: {
-                    Button(action: {print("add")}) {
-                        Image(systemName: "plus")
-                    }
-                })
-        }
+        Form {
+            Section(content: {
+                Text("Cart")
+            })
+        }.navigationTitle("Мои товары")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(content: {
+                Button(action: {print("add")}) {
+                    Image(systemName: "plus")
+                }
+            })
     }
 }

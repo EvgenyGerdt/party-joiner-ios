@@ -45,7 +45,7 @@ struct LoginButtonContent: View {
     
     var body: some View {
         if !hasLoading {
-            Text("Войти ")
+            Text("Войти")
                 .font(.headline)
                 .frame(width: 150, height: 50)
                 .foregroundColor(.white)
