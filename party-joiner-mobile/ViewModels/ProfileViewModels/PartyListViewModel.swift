@@ -24,6 +24,13 @@ class PartyListViewModel: ObservableObject {
         return parties.filter { $0.name.contains(searchInput) }
     }
     
+    func formattedDate(dateStr: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        
+        return dateFormatter.date(from: dateStr) ?? Date.now
+    }
+    
     func loadPartyList() {
         self.hasLoading = true
         PartyService().loadPartyList() { result in
@@ -31,6 +38,7 @@ class PartyListViewModel: ObservableObject {
             case .success(let parties):
                 self.parties = parties
                 self.hasLoading = false
+                self.hasError = false
             case .failure(let error):
                 self.hasLoading = false
                 self.hasError = true

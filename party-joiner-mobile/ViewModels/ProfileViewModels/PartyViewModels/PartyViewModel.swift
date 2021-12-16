@@ -1,5 +1,5 @@
 //
-//  CartViewModel.swift
+//  PartyViewModel.swift
 //  party-joiner-mobile
 //
 //  Created by Evgeny Gerdt on 03.12.2021.
@@ -7,30 +7,28 @@
 
 import Foundation
 
-class CartViewModel: ObservableObject {
+class PartyViewModel: ObservableObject {
     
-    @Published var price: Int = 0
-    @Published var name: String = ""
+    @Published var party: Party = Party.placeholder
     
     @Published var hasLoading: Bool = false
+    @Published var loaded: Bool = false
     @Published var hasError: Bool = false
     
-    private var addItemToCartBody: AddToCartRequestBody {
-        AddToCartRequestBody(price: price, name: name)
-    }
-    
-    func addItemToCart() {
+    func loadParty(id: String) {
         self.hasLoading = true
-        PartyService().addItemToCart(addItemToCartBody: addItemToCartBody) { result in
+        PartyService().loadCurrentParty(id: id) { result in
             switch result {
-            case .success(let message):
-                print(message)
+            case .success(let party):
+                self.party = party
+                self.loaded = true
                 self.hasLoading = false
                 self.hasError = false
             case .failure(let error):
                 print(error.localizedDescription)
-                self.hasLoading = false
+                self.loaded = false
                 self.hasError = true
+                self.hasLoading = false
             }
         }
     }

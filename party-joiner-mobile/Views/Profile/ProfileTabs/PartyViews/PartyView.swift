@@ -9,17 +9,27 @@ import SwiftUI
 
 struct PartyView: View {
     
-    @State var party: Party
+    @StateObject var partyViewModel: PartyViewModel = PartyViewModel()
     @State var isShowShareSheet: Bool = false
+    
+    @State var partyId: String
     
     var id = UserDefaults.standard.string(forKey: "id")
     
-    var currentMember: Party.Member {
-        return party.members.filter { $0.id == self.id ?? "" }[0]
+    var currentMember: Party.Member? {
+        if partyViewModel.loaded {
+            return partyViewModel.party.members.filter { $0.id == self.id ?? "" }[0]
+        } else {
+            return nil
+        }
     }
     
     var memberCart: [Party.Member.CartItem] {
-        return currentMember.cart
+        if partyViewModel.loaded {
+            return currentMember?.cart ?? []
+        } else {
+            return []
+        }
     }
     
     var body: some View {
@@ -27,7 +37,7 @@ struct PartyView: View {
                 Section(content: {
                     Button(action: {isShowShareSheet.toggle()}) {
                         HStack {
-                            Text(party.inviteCode)
+                            Text(partyViewModel.party.inviteCode)
                                 .font(.largeTitle)
                                 .fontWeight(.semibold)
                             Spacer()
@@ -39,13 +49,26 @@ struct PartyView: View {
                 })
                 
                 Section(content: {
-                    Text(party.info.description)
+                    HStack {
+                        Image(systemName: "ellipsis.bubble")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 20))
+                        Text(partyViewModel.party.info.description)
+                    }
+                    HStack {
+                        Image(systemName: "location")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 20))
+                        Text(partyViewModel.party.info.location)
+                    }
                 }, header: {
                     Text("Описание")
                 })
                 
                 Section(content: {
-                    NavigationLink(destination: MemberCartView(cart: memberCart)) {
+                    NavigationLink(destination:
+                                    MemberCartView(cart: memberCart, partyId: partyId)
+                                    .environmentObject(partyViewModel)) {
                         Image(systemName: "dollarsign.square.fill")
                             .renderingMode(.original)
                             .foregroundColor(.yellow)
@@ -53,7 +76,7 @@ struct PartyView: View {
                         Text("Мои товары")
                     }
                     
-                    NavigationLink(destination: PartyMembersView(members: party.members)) {
+                    NavigationLink(destination: PartyMembersView(members: partyViewModel.party.members)) {
                         Image(systemName: "m.square.fill")
                             .renderingMode(.original)
                             .foregroundColor(.green)
@@ -62,7 +85,7 @@ struct PartyView: View {
                     }
                 })
                 
-                if currentMember.role == MemberStatus.CREATOR {
+                if currentMember?.role == MemberStatus.CREATOR {
                     Section(content: {
                         Button(action: {print("close")}) {
                             HStack {
@@ -77,10 +100,12 @@ struct PartyView: View {
                     })
                 }
             }
-            .navigationTitle(party.name)
+            .refreshable {partyViewModel.loadParty(id: partyId)}
+            .onAppear(perform: {partyViewModel.loadParty(id: partyId)})
+            .navigationTitle(partyViewModel.party.name)
                 .navigationBarTitleDisplayMode(.inline)
-            .sheet(isPresented: $isShowShareSheet) {
-                ShareSheet(activityItems: [party.inviteCode])
+                .sheet(isPresented: $isShowShareSheet, onDismiss: {partyViewModel.loadParty(id: partyId)}) {
+                ShareSheet(activityItems: [partyViewModel.party.inviteCode])
             }
     }
 }

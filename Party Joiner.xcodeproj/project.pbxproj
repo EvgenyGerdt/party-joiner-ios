@@ -19,10 +19,14 @@
 		C034F2072756F7E200B3883E /* PartyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034F2062756F7E200B3883E /* PartyListViewModel.swift */; };
 		C034F20B2756F82800B3883E /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034F20A2756F82800B3883E /* Party.swift */; };
 		C034F20D2757025400B3883E /* PartyListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034F20C2757025400B3883E /* PartyListResponse.swift */; };
+		C0375F4B275D286A00DE5E69 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0375F4A275D286A00DE5E69 /* ForgotPasswordViewModel.swift */; };
 		C040FDF8274E3AA7009668AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040FDF7274E3AA7009668AE /* LoginViewModel.swift */; };
+		C05B4AE1275A6155005A2273 /* AddToCartSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B4AE0275A6155005A2273 /* AddToCartSheet.swift */; };
 		C08780512755CF77004A6F84 /* CreatePartyRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08780502755CF77004A6F84 /* CreatePartyRequestBody.swift */; };
 		C08780552755D3CD004A6F84 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08780542755D3CD004A6F84 /* MessageResponse.swift */; };
 		C08780572755D42B004A6F84 /* CreatePartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */; };
+		C0A43F2C2760DDCF0091C955 /* DeleteItemFromCartRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A43F2B2760DDCF0091C955 /* DeleteItemFromCartRequestBody.swift */; };
+		C0A43F2E2760EA030091C955 /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A43F2D2760EA030091C955 /* MembersViewModel.swift */; };
 		C0AF76712754469900EEE153 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF76702754469900EEE153 /* UserService.swift */; };
 		C0AF767327544D0000EEE153 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF767227544D0000EEE153 /* ProfileViewModel.swift */; };
 		C0B38E14275596EB00712151 /* PartyHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38E13275596EB00712151 /* PartyHistoryView.swift */; };
@@ -42,7 +46,6 @@
 		C0E1FA2D275A39A800079319 /* AddToCartRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E1FA2C275A39A800079319 /* AddToCartRequestBody.swift */; };
 		C0E1FA2F275A3A7400079319 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E1FA2E275A3A7400079319 /* CartViewModel.swift */; };
 		C0E6C5F22757B30A0009B153 /* MemberStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6C5F12757B30A0009B153 /* MemberStatus.swift */; };
-		C0F4603A27529F99006DFECD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0F4603927529F99006DFECD /* Alamofire */; };
 		C0F6E2AB274DAF9A007EF618 /* party_joiner_mobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6E2AA274DAF9A007EF618 /* party_joiner_mobileApp.swift */; };
 		C0F6E2AD274DAF9A007EF618 /* PartyJoinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6E2AC274DAF9A007EF618 /* PartyJoinerView.swift */; };
 		C0F6E2AF274DAF9B007EF618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F6E2AE274DAF9B007EF618 /* Assets.xcassets */; };
@@ -68,10 +71,14 @@
 		C034F2062756F7E200B3883E /* PartyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListViewModel.swift; sourceTree = "<group>"; };
 		C034F20A2756F82800B3883E /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		C034F20C2757025400B3883E /* PartyListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyListResponse.swift; sourceTree = "<group>"; };
+		C0375F4A275D286A00DE5E69 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		C040FDF7274E3AA7009668AE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C05B4AE0275A6155005A2273 /* AddToCartSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartSheet.swift; sourceTree = "<group>"; };
 		C08780502755CF77004A6F84 /* CreatePartyRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyRequestBody.swift; sourceTree = "<group>"; };
 		C08780542755D3CD004A6F84 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyViewModel.swift; sourceTree = "<group>"; };
+		C0A43F2B2760DDCF0091C955 /* DeleteItemFromCartRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemFromCartRequestBody.swift; sourceTree = "<group>"; };
+		C0A43F2D2760EA030091C955 /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
 		C0AF76702754469900EEE153 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C0AF767227544D0000EEE153 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0B38E13275596EB00712151 /* PartyHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHistoryView.swift; sourceTree = "<group>"; };
@@ -109,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F4603A27529F99006DFECD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +165,7 @@
 				C0B38E212755A59400712151 /* JoinPartyRequestBody.swift */,
 				C08780502755CF77004A6F84 /* CreatePartyRequestBody.swift */,
 				C0E1FA2C275A39A800079319 /* AddToCartRequestBody.swift */,
+				C0A43F2B2760DDCF0091C955 /* DeleteItemFromCartRequestBody.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -182,16 +189,42 @@
 		C040FDF6274E3A8E009668AE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C040FDF7274E3AA7009668AE /* LoginViewModel.swift */,
-				C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */,
-				C0AF767227544D0000EEE153 /* ProfileViewModel.swift */,
-				C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */,
-				C034F2062756F7E200B3883E /* PartyListViewModel.swift */,
-				C0E1FA28275A109900079319 /* JoinPartyViewModel.swift */,
-				C0E1FA2A275A10A600079319 /* PartyViewModel.swift */,
-				C0E1FA2E275A3A7400079319 /* CartViewModel.swift */,
+				C0A43F302760EA3A0091C955 /* ProfileViewModels */,
+				C0A43F2F2760EA260091C955 /* AuthViewModels */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C0A43F2F2760EA260091C955 /* AuthViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0375F4A275D286A00DE5E69 /* ForgotPasswordViewModel.swift */,
+				C01CDD30274EAC1600972BCC /* RegisterViewModel.swift */,
+				C040FDF7274E3AA7009668AE /* LoginViewModel.swift */,
+			);
+			path = AuthViewModels;
+			sourceTree = "<group>";
+		};
+		C0A43F302760EA3A0091C955 /* ProfileViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0A43F312760EA530091C955 /* PartyViewModels */,
+				C0E1FA28275A109900079319 /* JoinPartyViewModel.swift */,
+				C034F2062756F7E200B3883E /* PartyListViewModel.swift */,
+				C08780562755D42B004A6F84 /* CreatePartyViewModel.swift */,
+				C0AF767227544D0000EEE153 /* ProfileViewModel.swift */,
+			);
+			path = ProfileViewModels;
+			sourceTree = "<group>";
+		};
+		C0A43F312760EA530091C955 /* PartyViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0E1FA2A275A10A600079319 /* PartyViewModel.swift */,
+				C0E1FA2E275A3A7400079319 /* CartViewModel.swift */,
+				C0A43F2D2760EA030091C955 /* MembersViewModel.swift */,
+			);
+			path = PartyViewModels;
 			sourceTree = "<group>";
 		};
 		C0B38E122755968900712151 /* SettingsViews */ = {
@@ -300,6 +333,7 @@
 				C0E1FA25275A0D7600079319 /* JoinPartySheet.swift */,
 				C0B38E232755AE5200712151 /* MailView.swift */,
 				C0FFDFEC2757389B00A9A2B9 /* ShareSheet.swift */,
+				C05B4AE0275A6155005A2273 /* AddToCartSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -321,7 +355,6 @@
 			);
 			name = "party-joiner-mobile";
 			packageProductDependencies = (
-				C0F4603927529F99006DFECD /* Alamofire */,
 			);
 			productName = "party-joiner-mobile";
 			productReference = C0F6E2A7274DAF9A007EF618 /* party-joiner-mobile.app */;
@@ -335,7 +368,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					C0F6E2A6274DAF9A007EF618 = {
 						CreatedOnToolsVersion = 13.1;
@@ -349,6 +382,7 @@
 			knownRegions = (
 				en,
 				ru,
+				Base,
 			);
 			mainGroup = C0F6E29E274DAF9A007EF618;
 			packageReferences = (
@@ -385,7 +419,9 @@
 				C01CDD29274E999F00972BCC /* LoginRequestBody.swift in Sources */,
 				C0B3C2A327525BB9005100ED /* CreatePartyTabView.swift in Sources */,
 				C08780552755D3CD004A6F84 /* MessageResponse.swift in Sources */,
+				C0A43F2C2760DDCF0091C955 /* DeleteItemFromCartRequestBody.swift in Sources */,
 				C08780572755D42B004A6F84 /* CreatePartyViewModel.swift in Sources */,
+				C0375F4B275D286A00DE5E69 /* ForgotPasswordViewModel.swift in Sources */,
 				C0B38E222755A59400712151 /* JoinPartyRequestBody.swift in Sources */,
 				C034F2072756F7E200B3883E /* PartyListViewModel.swift in Sources */,
 				C08780512755CF77004A6F84 /* CreatePartyRequestBody.swift in Sources */,
@@ -401,7 +437,9 @@
 				C0F6E2D7274DBA9C007EF618 /* AuthService.swift in Sources */,
 				C0F6E2AD274DAF9A007EF618 /* PartyJoinerView.swift in Sources */,
 				C0B38E162755970D00712151 /* NotificationSettingsView.swift in Sources */,
+				C0A43F2E2760EA030091C955 /* MembersViewModel.swift in Sources */,
 				C01CDD1D274E95EF00972BCC /* ForgotPasswordView.swift in Sources */,
+				C05B4AE1275A6155005A2273 /* AddToCartSheet.swift in Sources */,
 				C0B3C2A827525BF3005100ED /* SettingsTabView.swift in Sources */,
 				C0B38E262755AE7000712151 /* ComposeMailData.swift in Sources */,
 				C01CDD31274EAC1600972BCC /* RegisterViewModel.swift in Sources */,
@@ -433,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -480,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -495,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -536,7 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "Party Joiner";
@@ -561,6 +601,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,6 +631,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -638,14 +680,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C0F4603927529F99006DFECD /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C0F4603827529F99006DFECD /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0F6E29F274DAF9A007EF618 /* Project object */;
 }

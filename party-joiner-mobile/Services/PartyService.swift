@@ -17,6 +17,8 @@ class PartyService: ObservableObject {
     private var token: String? = UserDefaults.standard.string(forKey: "token")
     private var id = UserDefaults.standard.string(forKey: "id")
     
+    // MARK: -- Создание вечеринки [POST]
+    
     func createParty(party: CreatePartyRequestBody, completion: @escaping (Result<String, PartyError>) -> Void) {
         AF.request(API.BaseURL + "/party/create",
                    method: .post,
@@ -37,6 +39,8 @@ class PartyService: ObservableObject {
         }
     }
     
+    // MARK: -- Получение списка вечеринок [GET]
+    
     func loadPartyList(completion: @escaping (Result<[Party], PartyError>) -> Void) {
         AF.request(API.BaseURL + "/party/list/\(id ?? "")",
                    method: .get,
@@ -48,6 +52,7 @@ class PartyService: ObservableObject {
             
             do {
                 let partyListResponse = try JSONDecoder().decode([Party].self, from: data)
+                print(partyListResponse)
                 completion(.success(partyListResponse))
             } catch {
                 print(error)
@@ -56,12 +61,31 @@ class PartyService: ObservableObject {
         }
     }
     
-//    func loadCurrentParty(id: String, completion: @escaping (Result<Party, PartyError>) -> Void) {
-//        AF.request(API.BaseURL)
-//    }
+    // MARK: -- Загрузить текующую вечеринку [GET]
+    
+    func loadCurrentParty(id: String, completion: @escaping (Result<Party, PartyError>) -> Void) {
+        AF.request(API.BaseURL + "/party/\(id)",
+                   method: .get,
+                   headers: ["Authorization": self.token!]).response { response in
+            guard let data = response.data else {
+                completion(.failure(.custom(errorMessage: "[LoadCurrentParty] No data")))
+                return
+            }
+            
+            do {
+                let partyResponse = try JSONDecoder().decode(Party.self, from: data)
+                completion(.success(partyResponse))
+            } catch {
+                print(error)
+                completion(.failure(.custom(errorMessage: "Decoding error at [LoadCurrentPartyRequest]: \(error)")))
+            }
+        }
+    }
+    
+    // MARK: -- Вступление в вечеринку [POST]
     
     func joinToParty(joinPartyBody: JoinPartyRequestBody, completion: @escaping (Result<String, PartyError>) -> Void) {
-        AF.request(API.BaseURL + "/party/user/\(id ?? "")",
+        AF.request(API.BaseURL + "/party/member/\(id ?? "")",
                    method: .post,
                    parameters: joinPartyBody,
                    encoder: JSONParameterEncoder.default,
@@ -81,8 +105,10 @@ class PartyService: ObservableObject {
         }
     }
     
-    func addItemToCart(addItemToCartBody: AddToCartRequestBody, completion: @escaping (Result<String, PartyError>) -> Void) {
-        AF.request(API.BaseURL + "/party/\(id ?? "")/add",
+    // MARK: -- Добавление товара пользователю в корзину [POST]
+    
+    func addItemToCart(addItemToCartBody: AddToCartRequestBody, partyId: String, completion: @escaping (Result<String, PartyError>) -> Void) {
+        AF.request(API.BaseURL + "/party/\(partyId)/member/\(id ?? "")/add",
                    method: .post,
                    parameters: addItemToCartBody,
                    encoder: JSONParameterEncoder.default,
@@ -92,6 +118,8 @@ class PartyService: ObservableObject {
                 return
             }
             
+            debugPrint(response)
+            
             do {
                 let addItemToCartResponse = try JSONDecoder().decode(MessageResponse.self, from: data)
                 completion(.success(addItemToCartResponse.message))
@@ -100,5 +128,25 @@ class PartyService: ObservableObject {
                 completion(.failure(.custom(errorMessage: "Decoding error at [AddItemToCart]: \(error)")))
             }
         }
+    }
+    
+    // MARK: -- Удаление товара из корзины [DELETE]
+    
+    func deleteItemFromCart(deleteItemFromCartBody: DeleteItemFromCartRequestBody, partyId: String, completion: @escaping(Result<String, PartyError>) -> Void) {
+        
+    }
+    
+    
+    
+    // MARK: -- Загрузка корзины пользователя [GET]
+    
+    func loadMemberCart(partyId: String, completion: @escaping(Result<[Party.Member.CartItem], PartyError>) -> Void) {
+        
+    }
+    
+    // MARK: -- Закрытие вечеринки [POST]
+    
+    func closeParty(partyId: String, completion: @escaping(Result<String, PartyError>) -> Void) {
+        
     }
 }

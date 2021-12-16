@@ -9,10 +9,10 @@ import Foundation
 
 class RegisterViewModel: ObservableObject {
     
-    var email: String = ""
-    var password: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
     
     @Published var hasAuthError: Bool = false
     
